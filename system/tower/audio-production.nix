@@ -7,5 +7,6 @@
     renoise
     reaper
     audacity
+    vital
   ];
 }
