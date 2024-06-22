@@ -1,6 +1,6 @@
 {pkgs,...}:
 {
-  networking.hostName = "nixos";
+  networking.hostName = "tower";
   networking.firewall = {
     enable = false;
     allowedUDPPorts = [4010 25565];
