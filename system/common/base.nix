@@ -1,10 +1,7 @@
 {
-  # config,
   pkgs,
   ...
 }: {
-  # imports = [./hardware-configuration.nix];
-
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   nixpkgs.config.allowUnfree = true;
@@ -115,23 +112,4 @@
     google-fonts
     gyre-fonts
   ];
-
-  # environment.variables = let
-  #   makePluginPath = format:
-  #     (pkgs.lib.strings.makeSearchPath format [
-  #       "$HOME/.nix-profile/lib"
-  #       "/run/current-system/sw/lib"
-  #       "/etc/profiles/per-user/$USER/lib"
-  #     ])
-  #     + ":$HOME/.${format}";
-  # in {
-  #   DSSI_PATH   = makePluginPath "dssi";
-  #   LADSPA_PATH = makePluginPath "ladspa";
-  #   LV2_PATH    = makePluginPath "lv2";
-  #   LXVST_PATH  = makePluginPath "lxvst";
-  #   VST_PATH    = makePluginPath "vst";
-  #   VST3_PATH   = makePluginPath "vst3";
-  #   RANGER_LOAD_DEFAULT_RC = "false";
-  #   EDITOR = "hx";
-  # };
 }
