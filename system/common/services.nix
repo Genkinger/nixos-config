@@ -8,18 +8,20 @@
     SUBSYSTEM=="usb", ATTR{idVendor}=="0483", ATTR{idProduct}=="374b", ACTION=="add", GROUP="dialout", MODE="0664"
   '';
 
+  services.displayManager = {
+    defaultSession = "none+i3";
+  };
   services.xserver = {
     videoDrivers = ["amdgpu"];
     enable = true;
-    displayManager = {defaultSession = "none+i3";};
     windowManager.i3 = {
       enable = true;
       package = pkgs.i3-rounded;
       extraPackages = with pkgs; [dmenu i3status i3lock i3blocks];
     };
     wacom.enable = true;
-    layout = "us";
-    xkbVariant = "";
+    xkb.layout = "us";
+    xkb.variant = "";
   };
   
   services.pipewire = {
@@ -52,7 +54,7 @@
 
   services.avahi = {
     enable = true;
-    nssmdns = true;
+    nssmdns4 = true;
     openFirewall = true;
   };
 
