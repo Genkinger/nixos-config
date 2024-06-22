@@ -7,20 +7,24 @@
   
   outputs = { self, nixpkgs, ...}@inputs: 
   let
-    system = "x86_64-linux";
     pkg-sets = final: prev: {
-      stable = import inputs.stable { system = final.system; config.allowUnfree = true; };
+      # stable = import inputs.nixpkgs { system = final.system; config.allowUnfree = true; };
       unstable = import inputs.unstable { system = final.system; config.allowUnfree = true;};
     };
   in
   {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem 
-    {
-      system = system;
+    nixosConfigurations.tower = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
       modules = [
-        ./configuration.nix
-        ({nixpkgs.overlays = [ pkg-sets ];})
+        ./system/common/base.nix
+        ./system/common/packages.nix
+        ./system/common/services.nix
+        ./system/tower/base.nix
+        ./system/tower/hardware.nix
+        ./system/tower/packages.nix
+        ./system/tower/audio-production.nix
         inputs.musnix.nixosModules.musnix
+        ({nixpkgs.overlays = [ pkg-sets ];})
       ];
     };
   };
