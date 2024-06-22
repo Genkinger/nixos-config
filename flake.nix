@@ -8,7 +8,6 @@
   outputs = { self, nixpkgs, ...}@inputs: 
   let
     pkg-sets = final: prev: {
-      # stable = import inputs.nixpkgs { system = final.system; config.allowUnfree = true; };
       unstable = import inputs.unstable { system = final.system; config.allowUnfree = true;};
     };
   in
