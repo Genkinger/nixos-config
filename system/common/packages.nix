@@ -1,6 +1,4 @@
-{pkgs, ...} : 
-{
-
+{pkgs, ...}: {
   # environment.systemPackages = let
   #   development = with pkgs; [
   #     odin
@@ -154,5 +152,4 @@
     discord
     flameshot
   ];
-
 }

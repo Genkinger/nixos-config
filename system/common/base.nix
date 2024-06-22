@@ -5,17 +5,17 @@
 }: {
   # imports = [./hardware-configuration.nix];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   nixpkgs.config.allowUnfree = true;
-  
+
   hardware.bluetooth.enable = true;
   hardware.opengl.driSupport = true;
   hardware.opengl.driSupport32Bit = true;
   hardware.opengl.enable = true;
   hardware.sane.enable = true;
   hardware.opentabletdriver.enable = true;
-  
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
@@ -44,18 +44,69 @@
   programs.ssh.startAgent = true;
 
   # TODO(Leah): Figure out how the fuck nix-ld works...
-  # programs.nix-ld.enable = true;
-  # programs.nix-ld.libraries = with pkgs; [libnghttp2];
-  
+  programs.nix-ld.enable = true;
+
+  programs.nix-ld.libraries = with pkgs; [
+    alsa-lib
+    at-spi2-atk
+    at-spi2-core
+    atk
+    cairo
+    cups
+    curl
+    dbus
+    expat
+    fontconfig
+    freetype
+    fuse3
+    gdk-pixbuf
+    glib
+    gtk3
+    icu
+    libGL
+    libappindicator-gtk3
+    libdrm
+    libglvnd
+    libnotify
+    libpulseaudio
+    libunwind
+    libusb1
+    libuuid
+    libxkbcommon
+    libxml2
+    mesa
+    nspr
+    nss
+    openssl
+    pango
+    pipewire
+    stdenv.cc.cc
+    systemd
+    vulkan-loader
+    xorg.libX11
+    xorg.libXScrnSaver
+    xorg.libXcomposite
+    xorg.libXcursor
+    xorg.libXdamage
+    xorg.libXext
+    xorg.libXfixes
+    xorg.libXi
+    xorg.libXrandr
+    xorg.libXrender
+    xorg.libXtst
+    xorg.libxcb
+    xorg.libxkbfile
+    xorg.libxshmfence
+    zlib
+  ];
   environment.shells = with pkgs; [zsh];
-  
+
   users.users.leah = {
     isNormalUser = true;
     description = "Leah";
     extraGroups = ["networkmanager" "wheel" "libvirtd" "lp" "scanner" "dialout"];
     shell = pkgs.zsh;
   };
-
 
   fonts.packages = with pkgs; [
     noto-fonts
@@ -83,5 +134,4 @@
   #   RANGER_LOAD_DEFAULT_RC = "false";
   #   EDITOR = "hx";
   # };
-
 }

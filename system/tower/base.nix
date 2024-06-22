@@ -1,12 +1,11 @@
-{pkgs,...}:
-{
+{pkgs, ...}: {
   networking.hostName = "tower";
   networking.firewall = {
     enable = false;
     allowedUDPPorts = [4010 25565];
     allowedTCPPorts = [25565];
   };
-  
+
   boot.initrd.kernelModules = ["vfio_pci" "vfio" "vfio_iommu_type1" "amdgpu"];
   boot.kernelParams = ["amd_iommu=on" "vfio-pci.ids=10de:13c2,10de:0fbb"];
   boot.supportedFilesystems = ["ntfs"];

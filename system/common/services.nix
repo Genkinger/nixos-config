@@ -1,5 +1,4 @@
-{pkgs,...}:{
-
+{pkgs, ...}: {
   services.gvfs.enable = true;
   services.printing.enable = true;
   services.blueman.enable = true;
@@ -23,7 +22,7 @@
     xkb.layout = "us";
     xkb.variant = "";
   };
-  
+
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -37,7 +36,7 @@
     settings = {
       shadow = true;
       full-shadow = true;
-      shadow-opacity  = 0.5;
+      shadow-opacity = 0.5;
       fading = true;
       backend = "glx";
       active-opacity = 1;
@@ -57,6 +56,4 @@
     nssmdns4 = true;
     openFirewall = true;
   };
-
-
 }
