@@ -9,5 +9,6 @@
     virt-manager
     looking-glass-client
     scream    
+    dotnet-runtime
   ];
 }
