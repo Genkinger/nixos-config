@@ -125,6 +125,7 @@
 
   environment.systemPackages = with pkgs; [
     git
+    lazygit
     stow
     helix
     kitty
