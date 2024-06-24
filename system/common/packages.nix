@@ -151,5 +151,6 @@
     zathura
     discord
     flameshot
+    pavucontrol
   ];
 }
