@@ -3,6 +3,7 @@
   programs.zsh.ohMyZsh = {
     enable = true;
     plugins = [ "git" ];
+    theme = "cypher";
   };
   programs.dconf.enable = true;
   programs.ssh.startAgent = true;
