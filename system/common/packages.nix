@@ -134,6 +134,7 @@
     unzip
     ripgrep
     htop
+    fzf
     wget
     unrar
     arandr
