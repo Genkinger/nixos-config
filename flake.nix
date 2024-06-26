@@ -24,11 +24,28 @@
         ./system/common/base.nix
         ./system/common/packages.nix
         ./system/common/services.nix
+        ./system/common/programs.nix
         ./system/tower/base.nix
         ./system/tower/hardware.nix
         ./system/tower/packages.nix
+        ./system/tower/programs.nix
+        ./system/tower/virtualization.nix
         ./system/tower/audio-production.nix
         inputs.musnix.nixosModules.musnix
+        {nixpkgs.overlays = [pkg-sets];}
+      ];
+    };
+    nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        ./system/common/base.nix
+        ./system/common/packages.nix
+        ./system/common/services.nix
+        ./system/common/programs.nix
+        ./system/laptop/base.nix
+        ./system/laptop/hardware.nix
+        ./system/laptop/programs.nix
+        ./system/laptop/services.nix
         {nixpkgs.overlays = [pkg-sets];}
       ];
     };

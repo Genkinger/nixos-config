@@ -2,6 +2,8 @@
   services.gvfs.enable = true;
   services.printing.enable = true;
   services.blueman.enable = true;
+  services.devmon.enable = true;
+  services.udisks2.enable = true;
   services.udev.enable = true;
   services.udev.extraRules = ''
     SUBSYSTEM=="usb", ATTR{idVendor}=="0483", ATTR{idProduct}=="374b", ACTION=="add", GROUP="dialout", MODE="0664"
@@ -10,13 +12,14 @@
   services.displayManager = {
     defaultSession = "none+i3";
   };
+
   services.xserver = {
     videoDrivers = ["amdgpu"];
     enable = true;
     windowManager.i3 = {
       enable = true;
       package = pkgs.i3-rounded;
-      extraPackages = with pkgs; [dmenu i3status i3lock i3blocks];
+      extraPackages = with pkgs; [ dmenu i3status i3lock i3blocks rofi ];
     };
     wacom.enable = true;
     xkb.layout = "us";
