@@ -122,7 +122,7 @@
   #   ];
   # in
   #   tools ++ audio ++ development ++ media ++ graphicalSoftware;
-
+  programs.direnv.enable = true;
   environment.systemPackages = with pkgs; [
     git
     lazygit
