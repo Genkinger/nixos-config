@@ -1,5 +1,6 @@
 {
   pkgs,
+  config,
   ...
 }: {
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -41,7 +42,7 @@
 
   environment.shells = with pkgs; [zsh];
   environment.variables.EDITOR = "hx";
-  environment.variables.HOSTNAME = "${networking.hostName}";
+  environment.variables.HOSTNAME = "${config.networking.hostName}";
 
   users.users.leah = {
     isNormalUser = true;
