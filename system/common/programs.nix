@@ -1,6 +1,6 @@
 {pkgs,...}:{
   programs.zsh.enable = true;
-  programs.zsh.oh-my-zsh = {
+  programs.zsh.ohMyZsh = {
     enable = true;
     plugins = [ "git" ];
   };
