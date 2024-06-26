@@ -152,5 +152,6 @@
     discord
     flameshot
     pavucontrol
+    bc
   ];
 }
