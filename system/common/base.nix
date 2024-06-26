@@ -41,6 +41,7 @@
 
   environment.shells = with pkgs; [zsh];
   environment.variables.EDITOR = "hx";
+  environment.variables.HOSTNAME = "${networking.hostName}";
 
   users.users.leah = {
     isNormalUser = true;
