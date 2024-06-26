@@ -1,5 +1,9 @@
 {pkgs,...}:{
   programs.zsh.enable = true;
+  programs.zsh.oh-my-zsh = {
+    enable = true;
+    plugins = [ "git" ];
+  };
   programs.dconf.enable = true;
   programs.ssh.startAgent = true;
   programs.direnv.enable = true;
