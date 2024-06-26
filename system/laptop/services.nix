@@ -13,7 +13,8 @@
 
   services.xserver = {
     dpi = 140;
-    libinput.enable = true;
-    libinput.touchpad.naturalScrolling = true;
   };
+
+    services.libinput.enable = true;
+    services.libinput.touchpad.naturalScrolling = true;
 }
