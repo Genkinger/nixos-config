@@ -14,6 +14,13 @@
     fsType = "ntfs";
   };
 
+  users.users.leah = {
+    isNormalUser = true;
+    description = "Leah";
+    extraGroups = ["networkmanager" "wheel" "libvirtd" "lp" "scanner" "dialout"];
+    shell = pkgs.zsh;
+  };
+
   musnix.enable = true;
 
   system.stateVersion = "22.05";

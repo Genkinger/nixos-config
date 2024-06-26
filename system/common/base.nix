@@ -44,13 +44,6 @@
   environment.variables.EDITOR = "hx";
   environment.variables.HOSTNAME = "${config.networking.hostName}";
 
-  users.users.leah = {
-    isNormalUser = true;
-    description = "Leah";
-    extraGroups = ["networkmanager" "wheel" "libvirtd" "lp" "scanner" "dialout"];
-    shell = pkgs.zsh;
-  };
-
   fonts.packages = with pkgs; [
     noto-fonts
     noto-fonts-cjk
