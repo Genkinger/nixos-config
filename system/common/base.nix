@@ -40,6 +40,7 @@
   security.rtkit.enable = true;
 
   environment.shells = with pkgs; [zsh];
+  environment.variables.EDITOR = "hx";
 
   users.users.leah = {
     isNormalUser = true;
