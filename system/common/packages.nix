@@ -126,7 +126,7 @@
     git
     lazygit
     stow
-    helix
+    unstable.helix
     kitty
     just
     firefox

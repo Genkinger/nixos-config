@@ -5,5 +5,6 @@
     looking-glass-client
     scream    
     dotnet-runtime
+    bottles
   ];
 }
