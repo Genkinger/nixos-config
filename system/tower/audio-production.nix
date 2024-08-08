@@ -8,5 +8,12 @@
     reaper
     audacity
     vital
+    unstable.bitwig-studio
+    distrho
+    zam-plugins
+    surge-XT
+    lsp-plugins
+    helm
+    odin2
   ];
 }

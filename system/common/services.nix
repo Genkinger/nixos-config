@@ -1,4 +1,9 @@
 {pkgs, ...}: {
+
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  xdg.portal.config.common.default = "gtk";
+  xdg.portal.enable = true;
+  services.flatpak.enable = true;
   services.gvfs.enable = true;
   services.printing.enable = true;
   services.blueman.enable = true;
