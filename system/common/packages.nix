@@ -154,5 +154,8 @@
     flameshot
     pavucontrol
     bc
+    helvum
+    qpwgraph
+    coppwr
   ];
 }
