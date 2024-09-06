@@ -22,7 +22,8 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.networkmanager.enable = true;
-  networking.networkmanager.plugins = with pkgs; [networkmanager-l2tp,strongswanNM];
+  # networking.networkmanager.applet.enable = true;
+  networking.networkmanager.plugins = with pkgs; [networkmanager-l2tp networkmanager_strongswan networkmanager-vpnc];
 
   time.timeZone = "Europe/Berlin";
 

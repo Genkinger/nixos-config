@@ -8,6 +8,7 @@
   programs.dconf.enable = true;
   programs.ssh.startAgent = true;
   programs.direnv.enable = true;
+  programs.nm-applet.enable = true;
 
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
