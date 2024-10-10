@@ -123,6 +123,7 @@
   # in
   #   tools ++ audio ++ development ++ media ++ graphicalSoftware;
   environment.systemPackages = with pkgs; [
+    dunst
     git
     lazygit
     stow
