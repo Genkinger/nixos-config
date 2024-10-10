@@ -14,6 +14,7 @@
     SUBSYSTEM=="usb", ATTR{idVendor}=="0483", ATTR{idProduct}=="374b", ACTION=="add", GROUP="dialout", MODE="0664"
   '';
 
+  services.systembus-notify.enable = true;
   services.displayManager = {
     defaultSession = "none+i3";
   };
