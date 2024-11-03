@@ -5,7 +5,6 @@
     allowedUDPPorts = [4010 25565];
     allowedTCPPorts = [25565];
   };
-
   boot.supportedFilesystems = ["ntfs"];
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
 

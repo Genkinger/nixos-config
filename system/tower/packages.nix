@@ -6,5 +6,6 @@
     scream    
     dotnet-runtime
     bottles
+    kicad
   ];
 }
