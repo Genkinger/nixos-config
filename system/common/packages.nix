@@ -159,5 +159,6 @@
     helvum
     qpwgraph
     coppwr
+    spaceFM
   ];
 }
