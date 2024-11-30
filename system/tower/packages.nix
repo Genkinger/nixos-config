@@ -4,7 +4,7 @@
     virt-manager
     looking-glass-client
     scream    
-    dotnet-runtime
+    # dotnet-runtime
     bottles
     kicad
   ];

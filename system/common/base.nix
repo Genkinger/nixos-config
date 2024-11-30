@@ -14,12 +14,12 @@
   hardware.sane.enable = true;
   hardware.opentabletdriver.enable = true;
 
-  hardware.opengl.driSupport = true;
-  hardware.opengl.driSupport32Bit = true;
-  hardware.opengl.enable = true;
+  hardware.graphics.enable32Bit = true;
+  hardware.graphics.enable = true;
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.supportedFilesystems = ["ntfs"];
 
   networking.networkmanager.enable = true;
   # networking.networkmanager.applet.enable = true;
