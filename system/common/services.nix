@@ -52,7 +52,6 @@
       inactive-opacity = 0.75;
       blur-method = "dual_kawase";
       blur-strength = 3;
-      # corner-radius = 10;
       rounded-corners-exclude = ["class_g = 'i3bar'"];
     };
     opacityRules = [

@@ -160,5 +160,7 @@
     qpwgraph
     coppwr
     spaceFM
+    libresprite
+    tmux
   ];
 }
