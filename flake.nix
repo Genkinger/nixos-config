@@ -38,15 +38,8 @@
     nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        # ./system/common/base.nix
-        # ./system/common/packages.nix
-        # ./system/common/services.nix
-        # ./system/common/programs.nix
-        # ./system/laptop/base.nix
         ./system/laptop.nix
-        ./system/laptop/hardware.nix
-        # ./system/laptop/programs.nix
-        # ./system/laptop/services.nix
+        ./system/laptop_hardware.nix
         {nixpkgs.overlays = [pkg-sets];}
       ];
     };

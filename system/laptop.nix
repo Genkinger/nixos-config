@@ -73,12 +73,6 @@
     dedicatedServer.openFirewall = true;
   };
 
-  environment.systemPackages = with pkgs; [
-    prismlauncher
-    kicad
-  
-  ]; 
-
     services.auto-cpufreq.enable = true;
     services.auto-cpufreq.settings = {
       battery = {
@@ -109,6 +103,8 @@
   };
 
   environment.systemPackages = with pkgs; [
+    prismlauncher
+    kicad
     dive # look into docker image layers
     podman-tui # status of containers in the terminal
     # docker-compose # start group of containers for dev
