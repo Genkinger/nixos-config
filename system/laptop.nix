@@ -21,7 +21,7 @@
   boot.supportedFilesystems = ["ntfs"];
 
   networking.networkmanager.enable = true;
-  networking.networkmanager.insertNameservers = ["192.168.178.19" "192.168.178.1"];
+  # networking.networkmanager.insertNameservers = ["192.168.178.19" "192.168.178.1"];
 
   time.timeZone = "Europe/Berlin";
 
@@ -61,7 +61,7 @@
   users.users.leah = {
     isNormalUser = true;
     description = "Leah Genkinger";
-    extraGroups = [ "networkmanager" "wheel" "dialout" "audio" "video" ];
+    extraGroups = [ "networkmanager" "wheel" "dialout" "audio" "video" "incus-admin" ];
     shell = pkgs.zsh;
   };
 
@@ -89,26 +89,15 @@
     dpi = 140;
   };
 
-    services.libinput.enable = true;
-    services.libinput.touchpad.naturalScrolling = true;
+  services.libinput.enable = true;
+  services.libinput.touchpad.naturalScrolling = true;
 
 
-  virtualisation.containers.enable = true;
-  virtualisation = {
-    podman = {
-      enable = true;
-      dockerCompat = true;
-      defaultNetwork.settings.dns_enabled = true;
-    };
-  };
+  virtualisation.incus.enable = true;
 
   environment.systemPackages = with pkgs; [
     prismlauncher
     kicad
-    dive # look into docker image layers
-    podman-tui # status of containers in the terminal
-    # docker-compose # start group of containers for dev
-    podman-compose # start group of containers for dev
     dunst
     libnotify
     git
@@ -275,9 +264,10 @@
     ];
   };
 
-  services.avahi = {
-    enable = true;
-    nssmdns4 = true;
-    openFirewall = true;
-  };
+  # services.avahi = {
+  #   enable = true;
+  #   nssmdns4 = true;
+  #   openFirewall = true;
+  # };
+    
 }
