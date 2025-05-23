@@ -21,7 +21,9 @@
   boot.supportedFilesystems = ["ntfs"];
 
   networking.networkmanager.enable = true;
+  networking.nftables.enable = true;
   # networking.networkmanager.insertNameservers = ["192.168.178.19" "192.168.178.1"];
+  networking.firewall.trustedInterfaces = ["incusbr0"];
 
   time.timeZone = "Europe/Berlin";
 
